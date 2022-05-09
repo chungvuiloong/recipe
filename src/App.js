@@ -11,7 +11,6 @@ import {BrowserRouter as BRouter, Routes as Switch, Route} from "react-router-do
 function App() {
   return (
       <BRouter>
-      This is app
         <Switch>
             <Route path="/" element={<Layout/>}>
               <Route index element={<Home/>}/>

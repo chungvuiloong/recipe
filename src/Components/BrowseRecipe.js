@@ -1,6 +1,6 @@
 import React from 'react';
 
-const browseRecipe = () => {
+const BrowseRecipe = () => {
     return (
         <div>
             This is browse Recipe
@@ -8,4 +8,4 @@ const browseRecipe = () => {
     );
 };
 
-export default browseRecipe;
+export default BrowseRecipe;
