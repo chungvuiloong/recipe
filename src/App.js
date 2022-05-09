@@ -2,6 +2,7 @@ import './App.css';
 
 // Route
 // import Layout from './Pages/Layout';
+import Header from './Components/Header';
 import Home from './Components/Home';
 import BrowseRecipes from './Components/BrowseRecipes';
 import AddRecipes from './Components/AddRecipes';

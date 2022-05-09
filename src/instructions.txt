@@ -1,13 +1,13 @@
 home page component/ App
 - header page component
 - links
-- nav (home, recipes and add new recipes)
+- nav compoenent (home, recipes and add new recipes)
 
-- hero banner
+- hero banner component
 - it has video
 - browse recipes button
 
-- body 
+- body compoenent
 - looking for recipe title
 - browse recipes button
 - add recipes button
@@ -43,8 +43,6 @@ addRecipe component component
 - instructions (input text area)
 
 
-
-
-
-
-- app components
+json 
+- margit advised to check other recipe apps.
+- find the best format for the recipe database.
