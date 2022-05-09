@@ -1,23 +1,25 @@
 import './App.css';
-import {BrowserRouter as BRouter, Router as Switch, Route} from "react-router-dom";
+
+// Route
+import Layout from './Pages/Layout';
+import Home from './Components/Home';
+import BrowseRecipe from './Components/BrowseRecipe';
+
+
+import {BrowserRouter as BRouter, Routes as Switch, Route} from "react-router-dom";
 
 function App() {
   return (
-    <div>
       <BRouter>
-        <header>
-          <nav>
-            <Switch>
-              <Route></Route>
-            </Switch>
-          </nav>
-        </header>
+      This is app
+        <Switch>
+            <Route path="/" element={<Layout/>}>
+              <Route index element={<Home/>}/>
+              <Route path="/browseRecipe" element={<BrowseRecipe/>}/>
 
-        <body>
-
-        </body>
+            </Route>
+        </Switch>
       </BRouter>
-    </div>
   );
 }
 
