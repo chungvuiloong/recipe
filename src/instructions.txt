@@ -1,0 +1,50 @@
+home page component/ App
+- header page component
+- links
+- nav (home, recipes and add new recipes)
+
+- hero banner
+- it has video
+- browse recipes button
+
+- body 
+- looking for recipe title
+- browse recipes button
+- add recipes button
+- button 
+
+browseRecipe component
+- search bar
+- recipe card
+
+recipe card component
+- picture of recipes
+- country flag
+- food title
+- food description
+- see more button components (linls to a different page)
+
+recipeCardDetail component component
+- recipe name/ title
+- descriptions
+- prepartion/ instructions
+- picture
+- country flag
+- ingredeints (amount and name)
+
+addRecipe component component
+- name/ description
+- author name
+- country/ recipe from country
+- description (input text area)
+- image/ insert url
+- ingredeints (quanity and ingredeitn)
+- add more ingredeint button
+- instructions (input text area)
+
+
+
+
+
+
+
