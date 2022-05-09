@@ -9,11 +9,6 @@
   z-index: 0;
   overflow:hidden;
 }
-/* 
-.heroBannerVideo {
-  height:0px;
-  width:0px;
-} */
 
 nav {
   background-color: #2b2b2b;
@@ -22,10 +17,14 @@ nav {
 nav ul {
   text-decoration: none;
   display: flex;
-  flex-direction: row;
 }
 
 nav ul li {
   /* color: white; */
   list-style-type: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
 }
