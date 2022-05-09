@@ -5,7 +5,7 @@ import Content from './Content';
 const Body = () => {
     return (
         <>
-            This is body
+            This is body consisiting of:
             <HeroBanner/>
             <Content/>
         </>

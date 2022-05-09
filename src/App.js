@@ -1,9 +1,10 @@
 import './App.css';
 
 // Route
-import Layout from './Pages/Layout';
+// import Layout from './Pages/Layout';
 import Home from './Components/Home';
-import BrowseRecipe from './Components/BrowseRecipe';
+import BrowseRecipes from './Components/BrowseRecipes';
+import AddRecipes from './Components/AddRecipes';
 
 
 import {BrowserRouter as BRouter, Routes as Switch, Route} from "react-router-dom";
@@ -12,10 +13,10 @@ function App() {
   return (
       <BRouter>
         <Switch>
-            <Route path="/" element={<Layout/>}>
+            <Route path="/">
               <Route index element={<Home/>}/>
-              <Route path="/browseRecipe" element={<BrowseRecipe/>}/>
-
+              <Route path="/browseRecipes" element={<BrowseRecipes/>}/>
+              <Route path="/addRecipes" element={<AddRecipes/>}/>
             </Route>
         </Switch>
       </BRouter>
