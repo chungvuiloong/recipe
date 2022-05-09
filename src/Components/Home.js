@@ -5,9 +5,9 @@ import Body from './Body';
 const Home = () => {
     return (
         <div>
-            This is home page
             <Nav/>
             <Body/>
+            This is home page
         </div>
     );
 };
