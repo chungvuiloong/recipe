@@ -1,16 +1,32 @@
 {
   "recipes": [
     {
-      "name": "MrJay",
+      "name": "Poutine",
       "author": "MrJay",
       "country": "Malaysia",
       "description": "Meow Meow",
-      "image": "https://images.pexels.com/photos/617278/pexels-photo-617278.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "image": "https://cdn.pixabay.com/photo/2016/11/21/15/52/french-fries-1846083_640.jpg",
       "instructions": "Just do it!",
       "id": 1,
       "ingredients": [
         {
           "id": 1,
+          "quanity": "1",
+          "ingredient": "cinnamon"
+        }
+      ]
+    },
+    {
+      "name": "Not so poutine",
+      "author": "Niina",
+      "country": "Finland",
+      "description": "Meow Meow",
+      "image": "https://images.pexels.com/photos/6045410/pexels-photo-6045410.jpeg",
+      "instructions": "Just do it Jeremy!",
+      "id": 2,
+      "ingredients": [
+        {
+          "id": 2,
           "quanity": "1",
           "ingredient": "cinnamon"
         }

@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from './Nav';
 
-const AddRecipes = () => {
+const AddRecipes = (props) => {
     return (
         <>
             <Nav/>
@@ -35,7 +35,7 @@ const AddRecipes = () => {
                 <label for="instructions">Instructions</label>
                 <textarea type="text" name="instructions"></textarea>
 
-                <button type="submit">Post Recipe</button>
+                <button type="submit" onClick={props.submit}>Post Recipe</button>
             </form>
         </>
     );
