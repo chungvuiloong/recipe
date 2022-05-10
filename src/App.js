@@ -12,6 +12,7 @@ import {BrowserRouter as BRouter, Routes as Switch, Route} from "react-router-do
 function submitHandler (e) {
   e.preventDefault();
   console.log("Pressed!");
+
 }
 
 function App() {

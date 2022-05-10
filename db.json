@@ -11,9 +11,15 @@
       "ingredients": [
         {
           "id": 1,
-          "quanity": "1",
+          "quantity": "1",
           "ingredient": "cinnamon"
+        },
+        {
+          "id": 2,
+          "quantity": "2 spoons",
+          "ingredient": "lemon juice"
         }
+
       ]
     },
     {
@@ -27,7 +33,7 @@
       "ingredients": [
         {
           "id": 2,
-          "quanity": "1",
+          "quantity": "1",
           "ingredient": "cinnamon"
         }
       ]

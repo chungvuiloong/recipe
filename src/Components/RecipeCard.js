@@ -7,7 +7,7 @@ const RecipeCard = (data) => {
             <img src={data.image} alt={data.name}/>
             <div>{data.country}</div>
             <div>Name = {data.name}</div>
-            <details>{data.description}</details>
+            <summary>{data.description}</summary>
             <Link to={`/recipes/${data.id}`}>See more</Link>
         </div>
     );

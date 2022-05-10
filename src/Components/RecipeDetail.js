@@ -11,7 +11,7 @@ const RecipeDetail = () => {
     useEffect(() => {
         axios.get(`http://localhost:3333${pathname}`)
             .then((res) => {setData(res.data);
-                // console.log(res.data);
+                console.log(res.data);
             });
     }, [])
     
@@ -22,7 +22,11 @@ const RecipeDetail = () => {
             {data.id}
             <img src={data.image} alt={data.name}/>
             <div>Name = {data.name}</div>
-            <details>{data.description}</details>
+            <summary>{data.description}</summary>
+            {data.testing}
+            {data.ingredients?.map((ingredient) =>
+                <div key={ingredient.id}>{ingredient.quantity} - {ingredient.ingredient} </div>
+                )}
         </div>
     );
 };
