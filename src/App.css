@@ -28,3 +28,8 @@ form {
   display: flex;
   flex-direction: column;
 }
+
+.form-container {
+  width: 50rem;
+  margin: 0 auto
+}

@@ -5,8 +5,10 @@ const AddRecipes = () => {
     return (
         <>
             <Nav/>
-            <h2>Adding new recipe</h2>
-            <form>
+           
+            <form className="form-container">
+                <h2>Adding new recipe</h2>
+                
                 <label for="name">Name</label>
                 <input type="text" name="name"></input>
 
