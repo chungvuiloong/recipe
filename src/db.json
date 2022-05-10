@@ -1,28 +1,20 @@
 {
   "recipes": [
     {
-      "firstname": "11111",
-      "lastname": "11111",
-      "phone": "111111",
-      "role": "student",
-      "message": "111111",
-      "id": 5
-    },
-    {
-      "firstname": "vfvfv",
-      "lastname": "fvfvfvf",
-      "phone": "vfvfvf",
-      "role": "scientist",
-      "message": "vfvfvfvf",
-      "id": 7
-    },
-    {
-      "firstname": "ere",
-      "lastname": "ererrer",
-      "phone": "ereer",
-      "role": "student",
-      "message": "erererere",
-      "id": 8
+      "name": "MrJay",
+      "author": "MrJay",
+      "country": "Malaysia",
+      "description": "Meow Meow",
+      "image": "https://images.pexels.com/photos/617278/pexels-photo-617278.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "instructions": "Just do it!",
+      "id": 1,
+      "ingredients": [
+        {
+          "id": 1,
+          "quanity": "1",
+          "ingredient": "cinnamon"
+        }
+      ]
     }
   ]
 }
