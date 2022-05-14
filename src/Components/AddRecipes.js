@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
 import Nav from './Nav';
 
 const AddRecipes = (props) => {
+    const [data, setData] = useState([]);
+    
+    useEffect(() => {
+    axios.get(`https://restcountries.com/v3.1/all`)
+        .then((res) => {setData(res.data);
+            // console.log(res.data);
+        });
+    }, [])
+
+    console.log(data);
+
     return (
         <>
             <Nav/>
-           
             <form className="form-container">
                 <h2>Adding new recipe</h2>
                 
@@ -16,8 +28,11 @@ const AddRecipes = (props) => {
                 <input type="text" name="author"></input>
 
                 <label for="country">Recipe is from: </label>
-                <select name="cars" id="cars">
-                    <option value=""></option>
+                <select name="country" id="country">
+                {data?.map((country) => 
+                     <option value={country.name.common}>{country.name.common}<img src={country.flags.png}/></option>
+                )}
+                    
                 </select>
 
                 <label for="description">Description</label>
@@ -26,11 +41,19 @@ const AddRecipes = (props) => {
                 <label for="image">Image</label>
                 <input type="text" name="image"></input>
 
-                <label for="quantity">Quantity</label>
-                <input type="text" name="quantity"></input>
+                <div> 
+                    <div>Ingredients</div>
+                    <div>
+                        <label for="quantity">Quantity</label>
+                        <input type="text" name="quantity" placeholder="Quantity"></input>
+                    </div>
 
-                <label for="ingredient">Ingredient</label>
-                <input type="text" name="ingredient"></input>
+                    <div>
+                        <label for="ingredient">Ingredient</label>
+                        <input type="text" name="ingredient" placeholder="Ingredient"></input>
+                    </div>
+                </div>
+                
 
                 <label for="instructions">Instructions</label>
                 <textarea type="text" name="instructions"></textarea>
