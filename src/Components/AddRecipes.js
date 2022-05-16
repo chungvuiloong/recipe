@@ -5,7 +5,7 @@ import Nav from './Nav';
 const AddRecipes = () => {
 
     const [data, setData] = useState([]);
-    const [inputData, setInputData] = useState({
+    const [inputData, setInputData] = useState([{
         name: '',
         author: '',
         country: '',
@@ -13,7 +13,7 @@ const AddRecipes = () => {
         image: '',
         instructions: '',
         ingredients: []
-    });
+    }]);
 
     const [countries, setCountries] = useState([]);
     const [ingredients, setIngredients] = useState([
@@ -49,45 +49,47 @@ const AddRecipes = () => {
         console.log(ingredients);
     };
 
+    // adds new options to inset new data
     function addIngredient (e) {
         e.preventDefault();
         setIngredients([...ingredients, { id: ingredients.length + 1, ingredient: '', quantity: '' }]);
     }
 
-    function deleteHandler (e) {
-        e.preventDefault();
-        console.log("Delete handler");
-    }
+    // function deleteHandler (e) {
+    //     e.preventDefault();
+    //     console.log("Delete handler");
+    // }
 
-    function closeHandler () {
-        window.location.reload();
-      };
+    // function closeHandler () {
+    //     window.location.reload();
+    //   };
 
-    // event.target.value
     function getInputValue (event) {
         const userValue = event.target.value;
         console.log(userValue);
+   
     };
 
-    const inputHandler = (e) => {
+    function handleChange (e) {
         setInputData({
-          ...inputData,
-          [e.target.name]: e.target.value,
-        });
-      };
+            ...inputData,
+            [e.target.name]: e.target.value,
+          });
+    };
 
     return (
         <>
             <Nav/>
-            <form className="form-container" change={inputHandler}>
+            <form className="form-container" >
                 <h2>Adding new recipe</h2>
                 
                 <label htmlFor="name">Name of recipe</label>
-                <input type="text" name="name" value={inputData.name}></input>
+                <input type="text" name="name" ></input>
 
                <label htmlFor="author">Author</label>
-                <input type="text" name="author" value={inputData.author}></input>
- {/* 
+                <input type="text" name="author" ></input>
+                
+                {/* 
                 <label htmlFor="country">Recipe is from: </label>
                 <select name="country" id="country">
                     
