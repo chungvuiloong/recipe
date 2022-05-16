@@ -7,24 +7,7 @@ import RecipeDetail from './Components/RecipeDetail';
 import AddRecipes from './Components/AddRecipes';
 import {BrowserRouter as BRouter, Routes as Switch, Route} from "react-router-dom";
 
-// function submitHandler (e) {
-//   e.preventDefault();
-//   console.log("Pressed!");
-
-  
-
-// }
-
-  
-
-function addIngredient (e) {
-  e.preventDefault();
-  console.log("Added more ingredents!");
-        
-}
-
 function App() {
-  
   return (
       <BRouter>
         <Switch>
@@ -32,8 +15,7 @@ function App() {
               <Route index element={<Home/>}/>
               <Route path="/recipes" element={<BrowseRecipes/>}/>
                 <Route exact path="/recipes/:id" element={<RecipeDetail/>}/>
-              
-              <Route path="/addRecipes" element={<AddRecipes addIngredients={addIngredient}/>}/>
+              <Route path="/addRecipes" element={<AddRecipes/>}/>
             </Route>
         </Switch>
       </BRouter>

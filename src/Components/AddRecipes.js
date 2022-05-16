@@ -7,13 +7,17 @@ const AddRecipes = () => {
     const [data, setData] = useState([]);
     const [inputData, setInputData] = useState([{
         name: '',
-        author: '',
-        ingredients: []
+        author: ''
     }]);
+
     const [countries, setCountries] = useState([]);
 
     const [ingredients, setIngredients] = useState([
-        { id: 1, ingredient: 'testingLemon', quantity: 'several lemons' },
+        { 
+            id: 1, 
+            ingredient: 'testingLemon',
+            quantity: 'several lemons' 
+        },
       ]);
     
     
@@ -32,10 +36,11 @@ const AddRecipes = () => {
     function submitHandler (e){
         e.preventDefault();
         console.log("Submit data");
-        axios.post("http://localhost:3333/recipes", inputData)
+        axios.post("http://localhost:3333/recipes")
             .then((res) => console.log('res', res))
             .catch((err) => console.log('error',err));
-        // Works in sending the testing
+        // closeHandler();
+        console.log(ingredients);
     };
 
     function addIngredient (e) {
@@ -48,13 +53,17 @@ const AddRecipes = () => {
         console.log("Delete handler");
     }
 
+    function closeHandler () {
+        window.location.reload();
+      };
+
     return (
         <>
             <Nav/>
             <form className="form-container">
                 <h2>Adding new recipe</h2>
                 
-                <label htmlFor="name">Name</label>
+                <label htmlFor="name">Name of recipe</label>
                 <input type="text" name="name"></input>
 
                 <label htmlFor="author">Author</label>
@@ -79,8 +88,6 @@ const AddRecipes = () => {
                                           {country.flag}{country.name.common}
                             </option>
                     )}
-
-                 
                 </select>
 
                 <label htmlFor="description">Description</label>
@@ -92,7 +99,7 @@ const AddRecipes = () => {
                 <div>Ingredients</div>
                 
                     {
-                    ingredients?.map((ingredient, index) => (
+                    ingredients?.map((ingredient) => (
 
                         // deleteHandler = (id) => {
                         //     axios.delete(`http://localhost:3010/notes/${id}`).then((res)=> {
@@ -101,7 +108,7 @@ const AddRecipes = () => {
                         //     });
                         //   }; // End of delete Handler
                         
-                        <div key={index}>
+                        <div key={ingredient.ingredient}>
                             <input type="text" name="quantity" placeholder="quantity" defaultValue={ingredient.quantity}/>
                             <input type="text" name="ingredient" placeholder="ingredient" defaultValue={ingredient.ingredient}/>
                             <button type="button" name="delete" onClick={deleteHandler}>Delete</button>

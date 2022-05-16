@@ -31,7 +31,7 @@
       "id": 2,
       "ingredients": [
         {
-          "id": 2,
+          "id": 1,
           "quantity": "1",
           "ingredient": "cinnamon"
         }
@@ -39,14 +39,6 @@
     },
     {
       "id": 3
-    },
-    {
-      "Testing": "",
-      "id": 4
-    },
-    {
-      "Testing": "",
-      "id": 5
     }
   ]
 }
