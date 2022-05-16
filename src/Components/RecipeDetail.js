@@ -5,6 +5,7 @@ const RecipeDetail = () => {
 
     let pathname = window.location.pathname; // Gets the current pathname for example 
     const [data, setData] = useState([]);
+    
     console.log(window.location.pathname);
     useEffect(() => {
         axios.get(`http://localhost:3333${pathname}`)

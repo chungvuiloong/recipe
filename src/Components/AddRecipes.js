@@ -1,21 +1,49 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
 import Nav from './Nav';
+// import {MDCTextField as TextField} from '@material/textfield';
 
-const AddRecipes = (props) => {
+const AddRecipes = () => {
+
     const [data, setData] = useState([]);
+    const [inputData, setInputData] = useState([{
+        name: '',
+        author: '',
+        ingredients: []
+    }]);
+    const [countries, setCountries] = useState([]);
+
+    const [ingredients, setIngredients] = useState([
+        { id: 1, ingredient: 'testingLemon', quantity: 'several lemons' },
+      ]);
     
+    
+    // //Getting all the countries
     useEffect(() => {
     axios.get(`https://restcountries.com/v3.1/all`)
-        .then((res) => {setData(res.data);
-            // console.log(res.data);
+        .then((res) => {
+            setCountries(res.data);
         });
     }, [])
 
-    console.log(data);
+    //This sorts out the countries //Later in form element, it is called via mapping
+    const sortedCountries = [].concat(countries).sort((a, b) => a.name.common > b.name.common ? 1 : -1);
 
-    
+    // {...this.state.inputData}
+    function submitHandler (e){
+        e.preventDefault();
+        console.log("Submit data");
+        axios.post("http://localhost:3333/recipes", inputData)
+            .then((res) => console.log('res', res))
+            .catch((err) => console.log('error',err));
+        // Works in sending the testing
+    };
+
+    function addIngredient (e) {
+        e.preventDefault();
+        setIngredients([...ingredients, { id: ingredients.length + 1, ingredient: '', quantity: '' }]);
+    }
+
 
     return (
         <>
@@ -23,44 +51,72 @@ const AddRecipes = (props) => {
             <form className="form-container">
                 <h2>Adding new recipe</h2>
                 
-                <label for="name">Name</label>
+                <label htmlFor="name">Name</label>
                 <input type="text" name="name"></input>
 
-                <label for="author">Author</label>
+                <label htmlFor="author">Author</label>
                 <input type="text" name="author"></input>
 
-                <label for="country">Recipe is from: </label>
+                <label htmlFor="country">Recipe is from: </label>
                 <select name="country" id="country">
-                {data?.map((country) => 
-                     <option value={country.name.common}>{country.name.common}<img src={country.flags.png}/></option>
-                )}
                     
+                    {/* {countries?.map(
+                        (country) => 
+                            <option value={country.name.common} 
+                                    key={country.name.common}>
+                                        {country.flag}
+                                        {country.name.common}
+                            </option>
+                    )} */}
+
+                    {sortedCountries?.map(
+                        (country) => 
+                            <option value={country.name.common} 
+                                    key=  {country.name.common}>
+                                          {country.flag}{country.name.common}
+                            </option>
+                    )}
+
+                 
                 </select>
 
-                <label for="description">Description</label>
+                <label htmlFor="description">Description</label>
                 <textarea type="text" name="description"></textarea>
 
-                <label for="image">Image</label>
+                <label htmlFor="image">Image</label>
                 <input type="text" name="image"></input>
 
-                <div> 
+                {/* <div> 
                     <div>Ingredients</div>
                     <div>
-                        <label for="quantity">Quantity</label>
+                        <label htmlFor="quantity">Quantity</label>
                         <input type="text" name="quantity" placeholder="Quantity"></input>
                     </div>
 
                     <div>
-                        <label for="ingredient">Ingredient</label>
+                        <label htmlFor="ingredient">Ingredient</label>
                         <input type="text" name="ingredient" placeholder="Ingredient"></input>
                     </div>
-                </div>
+                </div> */}
                 
-                <button type="submit" onClick={props.addIngredients}>add more</button>
-                <label for="instructions">Instructions</label>
+                <div>Ingredients</div>
+                
+                    {
+                    ingredients?.map((ingredient, index) => (
+                        
+                        <div key={index}>
+                            <input type="text" name="quantity" placeholder="quantity" defaultValue={ingredient.quantity}/>
+                            <input type="text" name="ingredient" placeholder="ingredient" defaultValue={ingredient.ingredient}/>
+                        </div>
+
+                    ))}
+           
+                
+                <button type="submit" onClick={addIngredient}>Add more ingredients</button>
+                <label htmlFor="instructions">Instructions</label>
                 <textarea type="text" name="instructions"></textarea>
 
-                <button type="submit" onClick={props.submit}>Post Recipe</button>
+                <button type="submit" onClick={submitHandler}>Post Recipe</button>
             </form>
         </>
     );

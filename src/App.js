@@ -6,14 +6,19 @@ import BrowseRecipes from './Components/BrowseRecipes';
 import RecipeDetail from './Components/RecipeDetail';
 import AddRecipes from './Components/AddRecipes';
 
-
 import {BrowserRouter as BRouter, Routes as Switch, Route} from "react-router-dom";
 
-function submitHandler (e) {
-  e.preventDefault();
-  console.log("Pressed!");
+import axios from 'axios';
 
-}
+// function submitHandler (e) {
+//   e.preventDefault();
+//   console.log("Pressed!");
+
+  
+
+// }
+
+  
 
 function addIngredient (e) {
   e.preventDefault();
@@ -31,7 +36,7 @@ function App() {
               <Route path="/recipes" element={<BrowseRecipes/>}/>
                 <Route exact path="/recipes/:id" element={<RecipeDetail/>}/>
               
-              <Route path="/addRecipes" element={<AddRecipes submit={submitHandler} addIngredients={addIngredient}/>}/>
+              <Route path="/addRecipes" element={<AddRecipes addIngredients={addIngredient}/>}/>
             </Route>
         </Switch>
       </BRouter>
