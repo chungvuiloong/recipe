@@ -5,13 +5,17 @@ import Nav from './Nav';
 const AddRecipes = () => {
 
     const [data, setData] = useState([]);
-    const [inputData, setInputData] = useState([{
+    const [inputData, setInputData] = useState({
         name: '',
-        author: ''
-    }]);
+        author: '',
+        country: '',
+        description: '',
+        image: '',
+        instructions: '',
+        ingredients: []
+    });
 
     const [countries, setCountries] = useState([]);
-
     const [ingredients, setIngredients] = useState([
         { 
             id: 1, 
@@ -36,7 +40,9 @@ const AddRecipes = () => {
     function submitHandler (e){
         e.preventDefault();
         console.log("Submit data");
-        axios.post("http://localhost:3333/recipes")
+
+
+        axios.post("http://localhost:3333/recipes", ...inputData)
             .then((res) => console.log('res', res))
             .catch((err) => console.log('error',err));
         // closeHandler();
@@ -57,30 +63,34 @@ const AddRecipes = () => {
         window.location.reload();
       };
 
+    // event.target.value
+    function getInputValue (event) {
+        const userValue = event.target.value;
+        console.log(userValue);
+    };
+
+    const inputHandler = (e) => {
+        setInputData({
+          ...inputData,
+          [e.target.name]: e.target.value,
+        });
+      };
+
     return (
         <>
             <Nav/>
-            <form className="form-container">
+            <form className="form-container" change={inputHandler}>
                 <h2>Adding new recipe</h2>
                 
                 <label htmlFor="name">Name of recipe</label>
-                <input type="text" name="name"></input>
+                <input type="text" name="name" value={inputData.name}></input>
 
-                <label htmlFor="author">Author</label>
-                <input type="text" name="author"></input>
-
+               <label htmlFor="author">Author</label>
+                <input type="text" name="author" value={inputData.author}></input>
+ {/* 
                 <label htmlFor="country">Recipe is from: </label>
                 <select name="country" id="country">
                     
-                    {/* {countries?.map(
-                        (country) => 
-                            <option value={country.name.common} 
-                                    key={country.name.common}>
-                                        {country.flag}
-                                        {country.name.common}
-                            </option>
-                    )} */}
-
                     {sortedCountries?.map(
                         (country) => 
                             <option value={country.name.common} 
@@ -99,15 +109,7 @@ const AddRecipes = () => {
                 <div>Ingredients</div>
                 
                     {
-                    ingredients?.map((ingredient) => (
-
-                        // deleteHandler = (id) => {
-                        //     axios.delete(`http://localhost:3010/notes/${id}`).then((res)=> {
-                        //       const notes = this.state.data.filter((item) => item.id !== id);
-                        //       this.setState({data: notes});
-                        //     });
-                        //   }; // End of delete Handler
-                        
+                    ingredients?.map((ingredient) => (                        
                         <div key={ingredient.ingredient}>
                             <input type="text" name="quantity" placeholder="quantity" defaultValue={ingredient.quantity}/>
                             <input type="text" name="ingredient" placeholder="ingredient" defaultValue={ingredient.ingredient}/>
@@ -115,11 +117,10 @@ const AddRecipes = () => {
                         </div>
 
                     ))}
-           
                 
                 <button type="submit" onClick={addIngredient}>Add more ingredients</button>
                 <label htmlFor="instructions">Instructions</label>
-                <textarea type="text" name="instructions"></textarea>
+                <textarea type="text" name="instructions"></textarea> */}
 
                 <button type="submit" onClick={submitHandler}>Post Recipe</button>
             </form>
