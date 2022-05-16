@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Nav from './Nav';
-// import {MDCTextField as TextField} from '@material/textfield';
 
 const AddRecipes = () => {
 
@@ -44,6 +43,10 @@ const AddRecipes = () => {
         setIngredients([...ingredients, { id: ingredients.length + 1, ingredient: '', quantity: '' }]);
     }
 
+    function deleteHandler (e) {
+        e.preventDefault();
+        console.log("Delete handler");
+    }
 
     return (
         <>
@@ -85,28 +88,23 @@ const AddRecipes = () => {
 
                 <label htmlFor="image">Image</label>
                 <input type="text" name="image"></input>
-
-                {/* <div> 
-                    <div>Ingredients</div>
-                    <div>
-                        <label htmlFor="quantity">Quantity</label>
-                        <input type="text" name="quantity" placeholder="Quantity"></input>
-                    </div>
-
-                    <div>
-                        <label htmlFor="ingredient">Ingredient</label>
-                        <input type="text" name="ingredient" placeholder="Ingredient"></input>
-                    </div>
-                </div> */}
                 
                 <div>Ingredients</div>
                 
                     {
                     ingredients?.map((ingredient, index) => (
+
+                        // deleteHandler = (id) => {
+                        //     axios.delete(`http://localhost:3010/notes/${id}`).then((res)=> {
+                        //       const notes = this.state.data.filter((item) => item.id !== id);
+                        //       this.setState({data: notes});
+                        //     });
+                        //   }; // End of delete Handler
                         
                         <div key={index}>
                             <input type="text" name="quantity" placeholder="quantity" defaultValue={ingredient.quantity}/>
                             <input type="text" name="ingredient" placeholder="ingredient" defaultValue={ingredient.ingredient}/>
+                            <button type="button" name="delete" onClick={deleteHandler}>Delete</button>
                         </div>
 
                     ))}

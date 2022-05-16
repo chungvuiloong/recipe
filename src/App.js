@@ -5,10 +5,7 @@ import Home from './Components/Home';
 import BrowseRecipes from './Components/BrowseRecipes';
 import RecipeDetail from './Components/RecipeDetail';
 import AddRecipes from './Components/AddRecipes';
-
 import {BrowserRouter as BRouter, Routes as Switch, Route} from "react-router-dom";
-
-import axios from 'axios';
 
 // function submitHandler (e) {
 //   e.preventDefault();
