@@ -15,6 +15,12 @@ function submitHandler (e) {
 
 }
 
+function addIngredient (e) {
+  e.preventDefault();
+  console.log("Added more ingredents!");
+        
+}
+
 function App() {
   
   return (
@@ -25,7 +31,7 @@ function App() {
               <Route path="/recipes" element={<BrowseRecipes/>}/>
                 <Route exact path="/recipes/:id" element={<RecipeDetail/>}/>
               
-              <Route path="/addRecipes" element={<AddRecipes submit={submitHandler} />}/>
+              <Route path="/addRecipes" element={<AddRecipes submit={submitHandler} addIngredients={addIngredient}/>}/>
             </Route>
         </Switch>
       </BRouter>

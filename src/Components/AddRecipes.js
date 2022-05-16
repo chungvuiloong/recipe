@@ -15,6 +15,8 @@ const AddRecipes = (props) => {
 
     console.log(data);
 
+    
+
     return (
         <>
             <Nav/>
@@ -54,7 +56,7 @@ const AddRecipes = (props) => {
                     </div>
                 </div>
                 
-
+                <button type="submit" onClick={props.addIngredients}>add more</button>
                 <label for="instructions">Instructions</label>
                 <textarea type="text" name="instructions"></textarea>
 
