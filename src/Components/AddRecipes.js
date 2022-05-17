@@ -4,16 +4,25 @@ import Nav from './Nav';
 
 const AddRecipes = () => {
 
-    const [data, setData] = useState([]);
-    const [inputData, setInputData] = useState([{
+    const [data, setData] = useState([{
         name: '',
         author: '',
-        country: '',
-        description: '',
-        image: '',
-        instructions: '',
-        ingredients: []
+        // country: '',
+        // description: '',
+        // image: '',
+        // instructions: '',
+        // ingredients: []
     }]);
+
+    // const [inputData, setInputData] = useState([{
+    //     name: '',
+    //     author: '',
+    //     country: '',
+    //     description: '',
+    //     image: '',
+    //     instructions: '',
+    //     ingredients: []
+    // }]);
 
     const [countries, setCountries] = useState([]);
     const [ingredients, setIngredients] = useState([
@@ -40,13 +49,11 @@ const AddRecipes = () => {
     function submitHandler (e){
         e.preventDefault();
         console.log("Submit data");
-
-
-        axios.post("http://localhost:3333/recipes", ...inputData)
-            .then((res) => console.log('res', res))
-            .catch((err) => console.log('error',err));
+        axios.post("http://localhost:3333/recipes", ...data)
+        .then((res) => console.log('res', res))
+        .catch((err) => console.log('error',err));
         // closeHandler();
-        console.log(ingredients);
+        console.log(data);
     };
 
     // adds new options to inset new data
@@ -64,32 +71,41 @@ const AddRecipes = () => {
     //     window.location.reload();
     //   };
 
-    function getInputValue (event) {
-        const userValue = event.target.value;
-        console.log(userValue);
+    function getInputValue (e) {
+        const name = e.target.name;
+        const userValue = e.target.value;
+        console.log(name, userValue);
    
     };
 
-    function handleChange (e) {
-        setInputData({
-            ...inputData,
-            [e.target.name]: e.target.value,
-          });
-    };
+    // inputData: { ...this.state.inputData, [e.target.name]: e.target.value },
+
+    // const inputHandler = (e) => {
+    //     setInputData({
+    //       ...inputData,
+    //       [e.target.name]: e.target.value,
+    //     });
+    //   };
+
+      const changeData = (e) => {
+        setData({ ...data, [e.target.name]: e.target.value });
+      };
 
     return (
         <>
             <Nav/>
-            <form className="form-container" >
+            <form className="form-container" 
+            onChange={getInputValue} shows the inoput value
+            >
                 <h2>Adding new recipe</h2>
                 
                 <label htmlFor="name">Name of recipe</label>
-                <input type="text" name="name" ></input>
+                <input type="text" name="name" onChange={changeData}></input>
 
                <label htmlFor="author">Author</label>
-                <input type="text" name="author" ></input>
-                
-                {/* 
+                <input type="text" name="author" onChange={changeData} ></input>
+
+{/*                 
                 <label htmlFor="country">Recipe is from: </label>
                 <select name="country" id="country">
                     
