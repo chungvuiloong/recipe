@@ -5,7 +5,7 @@ import styles from './Nav.module.css';
 const Nav = () => {
     return (
         <nav>
-            <h1>Taste</h1>
+            <h1>TasteIt</h1>
             <ul>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/recipes">Recipe</Link></li>
