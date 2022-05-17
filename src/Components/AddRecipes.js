@@ -101,7 +101,7 @@ const AddRecipes = () => {
                         (country) => 
                             <option value={country.name.common} 
                                     key=  {country.name.common}
-                                    name={country.name.common}
+                                    defaultValue=""
                                     >
                                           {country.flag} {country.name.common}
                             </option>
@@ -113,7 +113,7 @@ const AddRecipes = () => {
 
                 <label htmlFor="image">Image</label>
                 {/* <input type="text" name="image" onChange={inputHandler}></input> */}
-                <input type="file" name="image" onChange={inputHandler}></input>
+                <input type="file" name="image"accept="image/*" multiple={false} onChange={inputHandler}></input>
                 
                 <div>Ingredients</div>
                 

@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Nav from './Nav';
 import RecipeCard from './RecipeCard';
+import styles from './BrowseRecipes.module.css';
 
 const BrowseRecipe = () => {
-    // example
-    // const [count, setCount] = useState(0);
 
     const [data, setData] = useState([]);
 
@@ -22,9 +21,11 @@ const BrowseRecipe = () => {
             <h3>Search for recipe:</h3>
 
             <h2>Our recipes</h2>
-            {data.map((recipe) => (
-                <RecipeCard {...recipe} key={recipe.id} />
+            <div className={styles.container}>
+                {data.map((recipe) => (
+                    <RecipeCard {...recipe} key={recipe.id} />
                 ))}
+            </div>
         </div>
     );
 };

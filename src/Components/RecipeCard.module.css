@@ -1,0 +1,16 @@
+.container {
+    width: 400px;
+    height: 400px;
+    border: 1px solid black;
+    margin: 25px auto;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+article {
+    padding: 25px;
+}
