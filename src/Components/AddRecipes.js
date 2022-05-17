@@ -34,20 +34,19 @@ const AddRecipes = () => {
     //This sorts out the countries //Later in form element, it is called via mapping
     const sortedCountries = [].concat(countries).sort((a, b) => a.name.common > b.name.common ? 1 : -1);
 
-    // {...this.state.inputData}
+    // Submits data
     function submitHandler (e){
-        // e.preventDefault();
-        console.log("Submit data");
         axios.post("http://localhost:3333/recipes", data, ...ingredients);
-        console.log(data);
+        // console.log(data);
     };
 
-    // adds new options to inset new data
+    // adds new options to insert new data
     function addIngredient (e) {
         e.preventDefault();
         setIngredients([...ingredients, { id: ingredients.length + 1, ingredient: '', quantity: '' }]);
     }
 
+    // Delete the options
     function deleteHandler (e) {
         e.preventDefault();
         console.log("Delete handler");

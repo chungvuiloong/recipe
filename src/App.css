@@ -11,18 +11,7 @@
   overflow:hidden;
 }
 
-nav {
-  background-color: #2b2b2b;
-}
 
-nav ul {
-  text-decoration: none;
-  display: flex;
-}
-
-nav ul li {
-  list-style-type: none;
-}
 
 form {
   display: flex;

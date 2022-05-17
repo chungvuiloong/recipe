@@ -4,7 +4,7 @@
       "name": "Poutine",
       "author": "MrJay",
       "country": "Malaysia",
-      "description": "Meow Meow",
+      "description": "It is a delicious meal orinated from Canada. French fries covered with cheese curds and gravy, yummy!",
       "image": "https://cdn.pixabay.com/photo/2016/11/21/15/52/french-fries-1846083_640.jpg",
       "instructions": "Just do it!",
       "id": 1,
@@ -22,10 +22,10 @@
       ]
     },
     {
-      "name": "Not so poutine",
+      "name": "Tomatoes",
       "author": "Niina",
       "country": "Finland",
-      "description": "Meow Meow",
+      "description": "Just simple tomatoes. Nothing special",
       "image": "https://images.pexels.com/photos/6045410/pexels-photo-6045410.jpeg",
       "instructions": "Just do it Jeremy!",
       "id": 2,

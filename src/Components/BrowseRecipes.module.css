@@ -1,3 +1,11 @@
+.searchTitle {
+    margin: 25px auto;
+}
+
+.allRecipesTitle {
+    margin: 25px auto;
+}
+
 .container {
     display: flex;
     flex-wrap: wrap;

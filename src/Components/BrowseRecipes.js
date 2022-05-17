@@ -11,16 +11,16 @@ const BrowseRecipe = () => {
     useEffect(() => {
         axios.get('http://localhost:3333/recipes')
             .then((res) => {setData(res.data);
-                // console.log(res.data);
+
             });
     }, [])
 
     return (
         <div>
             <Nav/>
-            <h3>Search for recipe:</h3>
+            <h3 className={styles.searchTitle}>Search for recipe:</h3>
 
-            <h2>Our recipes</h2>
+            <h2 className={styles.allRecipesTitle}>Our recipes</h2>
             <div className={styles.container}>
                 {data.map((recipe) => (
                     <RecipeCard {...recipe} key={recipe.id} />
