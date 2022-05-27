@@ -19,6 +19,7 @@ const BrowseRecipe = () => {
         <div>
             <Nav/>
             <h3 className={styles.searchTitle}>Search for recipe:</h3>
+            <input type="search" name=""></input>
 
             <h2 className={styles.allRecipesTitle}>Our recipes</h2>
             <div className={styles.container}>

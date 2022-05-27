@@ -11,12 +11,12 @@ function App() {
   return (
       <BRouter>
         <Switch>
-            <Route path="/">
-              <Route index element={<Home/>}/>
-              <Route path="/recipes" element={<BrowseRecipes/>}/>
-                <Route exact path="/recipes/:id" element={<RecipeDetail/>}/>
-              <Route path="/addRecipes" element={<AddRecipes/>}/>
-            </Route>
+          <Route path="/">
+            <Route index element={<Home/>}/>
+            <Route path="/recipes" element={<BrowseRecipes/>}/>
+            <Route exact path="/recipes/:id" element={<RecipeDetail/>}/>
+            <Route path="/addRecipes" element={<AddRecipes/>}/>
+          </Route>
         </Switch>
       </BRouter>
   );
