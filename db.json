@@ -38,44 +38,20 @@
       ]
     },
     {
-      "name": "wsws",
-      "author": "wsws",
-      "country": "",
-      "description": "wswsws",
+      "name": "Canadian Fries",
+      "author": "MrJay",
+      "country": "Canada",
+      "description": "Delicious fries with gravy",
       "image": "",
-      "instructions": "wswsw",
+      "instructions": "Just testing",
       "ingredients": [
         {
           "id": 1,
-          "ingredient": "wsws",
-          "quantity": "wswsws"
+          "ingredient": "amazingness",
+          "quantity": "1 spoon"
         }
       ],
       "id": 3
-    },
-    {
-      "id": 4
-    },
-    {
-      "id": 5
-    },
-    {
-      "id": 6
-    },
-    {
-      "id": 7
-    },
-    {
-      "id": 8
-    },
-    {
-      "id": 9
-    },
-    {
-      "id": 10
-    },
-    {
-      "id": 11
     }
   ]
 }
